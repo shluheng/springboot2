@@ -1,0 +1,31 @@
+server:
+  port: 8081 #修改默认的端口号，默认为8080
+  servlet:
+    context-path: /demo-test #修改默认的contextPath，默认为/
+ 
+spring:
+#  datasource:
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql:///springboot
+#    username: root
+#    password: admin
+    #springboot支持c3p0，dbcp，如果需要使用其他的数据库连接池，指定type
+    # type: 其他的使用指定的dataSource， 比如druid
+    
+  jpa:
+    database: MYSQL
+    show-sql: true
+ 
+    hibernate:
+      ddl-auto: update
+#      naming:
+#        strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQL5Dialect
+ 
+  thymeleaf:
+    cache: false #开发过程中建议关闭cache
+    encoding: UTF-8 #thymeleaf编码
+    suffix: .html # thymeleaf后缀
+    prefix: classpath:/templates
+    mode: HTML5

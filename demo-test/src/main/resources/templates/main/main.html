@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Spring Boot 首页</title>
+    <meta name="description" content="估计只有你一个人用了"/>
+    <meta name="keywords" content="index"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="renderer" content="webkit"/>
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="icon" type="image/png" th:href="@{image/wall_page/1.jpg}" />
+    <link rel="apple-touch-icon-precomposed" th:href="@{image/wall_page/2.jpg}" />
+    <meta name="apple-mobile-web-app-title" content="Amaze UI" />
+    
+    <link rel="stylesheet" th:href="@{plug-in/easyui/portal/portal.css}" />
+    <script th:src="@{plug-in/easyui/portal/jquery.portal.js}"></script>
+    
+    
+    <script th:src="@{plug-in/jquery-easyui-1.6.7/easyloader.js}"></script>
+    <script th:src="@{plug-in/jquery-easyui-1.6.7/jquery.min.js}"></script>
+    <script th:src="@{plug-in/jquery-easyui-1.6.7/jquery.easyui.min.js}"></script>
+    <script th:src="@{plug-in/jquery-easyui-1.6.7/locale/easyui-lang-zh_CN.js}"></script>
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" th:href="@{plug-in/bootstrap/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{plug-in/bootstrap/css/bootstrap-responsive.min.css}" />
+    <script th:src="@{plug-in/bootstrap/js/bootstrap.min.js}"></script>
+    <script th:src="@{plug-in/bootstrap/js/bootstrap-tab.js}"></script>
+    
+</head>
+<body>
+欢迎登录！
+<br/>
+<span th:text="${code}"></span>
+<br/>
+<span th:text="${msg}"></span><br/>
+<br/>
+ID : <span th:text="${user.id}"></span><br/>
+Name : <span th:text="${user.userName}"></span><br/>
+Birth : <span th:text="${user.userBrith}"></span><br/>
+
+<table>
+<tr th:each="prod : ${users}">
+　　<td th:text="${prod.id}"></td>
+　　<td th:text="${prod.userName}"></td>
+　　<td th:text="${prod.userBrith}"></td>
+</tr>
+</table>
+</body>
+</html>
